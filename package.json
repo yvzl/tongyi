@@ -1,7 +1,7 @@
 {
   "name": "tongyi",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/node": "^22.10.1",
     "axios": "^1.7.8",
     "pinia": "^2.2.8",
     "sass": "^1.81.0",
