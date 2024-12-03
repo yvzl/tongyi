@@ -1,0 +1,35 @@
+@mixin levelLiHover {
+  &:hover {
+    background-color: #f3f2ff;
+    color: #615ced;
+  }
+  &:hover > span {
+    display: block;
+    color: #615ced;
+  }
+}
+
+@mixin levelLi {
+  color: #26244c;
+  cursor: pointer;
+  font-size: 14px;
+  height: 36px;
+  padding: 6px 16px;
+  margin-bottom: 6px;
+  background-color: transparent;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color .3s ease, background-color .3s ease;
+  @include levelLiHover();
+}
+
+@mixin levelLiActive {
+  background-color: #f3f2ff;
+  color: #615ced;
+
+  > :deep(span) {
+    display: block;
+  }
+}

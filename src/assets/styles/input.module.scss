@@ -1,0 +1,9 @@
+.input {
+  flex: 1;
+  min-height: 40px;
+
+  > textarea {
+    font-size: 16px;
+    box-shadow: 0 0 0;
+  }
+}

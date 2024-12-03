@@ -1,0 +1,63 @@
+@use "styles/_mixins.module" as *;
+
+.list-level {
+  margin-top: 12px;
+
+  > li {
+    @include levelLi();
+
+    > p {
+      width: 140px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    > span {
+      font-size: 20px;
+      display: none;
+    }
+  }
+
+  > .active {
+    @include levelLiActive();
+  }
+}
+
+.level-popover {
+  width: 150px;
+
+  ul {
+    > li {
+      @include levelLi();
+      margin-bottom: 0;
+      border-radius: 5px;
+      justify-content: flex-start;
+
+      > span {
+        margin-right: 5px;
+      }
+    }
+
+    > .danger {
+      color: #e63224;
+
+      &:hover {
+        background: #fff2f2;
+        color: #e63224;
+
+        &:hover > span {
+          color: #e63224;
+        }
+      }
+    }
+  }
+
+  .my-enter-class, .my-leave-to-class {
+    opacity: 0;
+  }
+
+  .my-enter-active-class, .my-leave-active-class {
+    transition: all 0.3s ease;
+  }
+}

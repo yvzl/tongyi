@@ -1,11 +1,17 @@
 <script setup lang="ts">
-
+import Aside from "components/aside.vue";
+import Content from "components/content.vue";
 </script>
 
 <template>
-  <p>111</p>
+  <div class="home">
+    <div class="main">
+      <Aside/>
+      <Content/>
+    </div>
+  </div>
 </template>
 
-<style scoped>
-
+<style scoped lang="scss">
+@use "styles/home.module";
 </style>

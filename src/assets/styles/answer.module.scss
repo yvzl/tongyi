@@ -1,0 +1,50 @@
+.answer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  > .content {
+    display: flex;
+
+    > .bubble {
+      display: inline-flex;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      line-height: 24px;
+      flex-direction: column;
+
+      > .items {
+        display: flex;
+        align-self: flex-end;
+        margin-top: 15px;
+        gap: 20px;
+
+        > .icon {
+          transition: color .3s ease;
+          cursor: pointer;
+
+          &:hover {
+            color: #615ced;
+          }
+        }
+      }
+    }
+  }
+
+  > .user {
+    align-self: flex-end;
+
+    > .bubble {
+      background-color: #e0dfff;
+    }
+  }
+
+  > .chat {
+    align-self: flex-start;
+
+    > .bubble {
+      background-color: white;
+    }
+  }
+}

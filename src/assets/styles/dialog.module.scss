@@ -1,0 +1,8 @@
+.dialog {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.dialog::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0);
+}

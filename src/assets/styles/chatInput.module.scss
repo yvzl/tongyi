@@ -1,0 +1,18 @@
+.chat-input {
+  width: 900px;
+  max-width: 900px;
+  min-height: 60px;
+  margin: 18px auto 0 auto;
+  border-radius: 20px;
+  border: 1px solid #e8eaf2;
+  transition: border .4s ease;
+  box-shadow: 0 12px 24px -16px rgba(54, 54, 73, .04), 0 12px 40px 0 rgba(51, 51, 71, .08), 0 0 1px 0 rgba(44, 44, 54, .02);
+  display: flex;
+  align-items: flex-end;
+  padding: 8px 8px 8px 16px;
+  justify-content: space-between;
+
+  &:hover {
+    border: 1px solid #615ced;
+  }
+}

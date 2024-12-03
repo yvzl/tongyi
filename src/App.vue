@@ -1,3 +1,10 @@
+<script setup lang="ts">
+import {ConfigProvider} from "ant-design-vue"
+import theme from "config/theme"
+</script>
+
 <template>
-  <router-view></router-view>
+  <ConfigProvider :theme="theme">
+    <router-view/>
+  </ConfigProvider>
 </template>
