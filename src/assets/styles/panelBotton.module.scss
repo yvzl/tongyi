@@ -7,9 +7,18 @@
   align-items: center;
 
   > .btn {
-    @include levelLi();
-    justify-content: flex-start;
     width: 100%;
+    color: #26244c;
+    cursor: pointer;
+    font-size: 14px;
+    height: 36px;
+    padding: 6px 16px;
+    margin-bottom: 6px;
+    background-color: transparent;
+    border-radius: 12px;
+    transition: color .3s ease, background-color .3s ease;
+    justify-content: flex-start;
+    @include li(#f3f2ff, #615ced);
 
     > span {
       font-size: 18px;

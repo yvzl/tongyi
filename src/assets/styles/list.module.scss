@@ -34,7 +34,17 @@
         margin-top: 12px;
 
         > li {
-          @include levelLi();
+          color: #26244c;
+          cursor: pointer;
+          font-size: 14px;
+          height: 36px;
+          padding: 6px 16px;
+          margin-bottom: 6px;
+          background-color: transparent;
+          border-radius: 12px;
+          justify-content: space-between;
+          transition: color .3s ease, background-color .3s ease;
+          @include li(#f3f2ff, #615ced);
 
           > p {
             width: 140px;
@@ -50,7 +60,12 @@
         }
 
         > .active {
-          @include levelLiActive();
+          background-color: #f3f2ff;
+          color: #615ced;
+
+          > span {
+            display: block;
+          }
         }
       }
     }
@@ -62,10 +77,17 @@
 
   ul {
     > li {
-      @include levelLi();
+      color: #26244c;
+      cursor: pointer;
+      font-size: 14px;
+      height: 36px;
+      padding: 6px 16px;
+      background-color: transparent;
+      transition: color .3s ease, background-color .3s ease;
       margin-bottom: 0;
       border-radius: 5px;
       justify-content: flex-start;
+      @include li(#f3f2ff, #615ced);
 
       > span {
         margin-right: 5px;
@@ -74,15 +96,7 @@
 
     > .danger {
       color: #e63224;
-
-      &:hover {
-        background: #fff2f2;
-        color: #e63224;
-
-        &:hover > span {
-          color: #e63224;
-        }
-      }
+      @include liHover(#fff2f2, #e63224);
     }
   }
 
