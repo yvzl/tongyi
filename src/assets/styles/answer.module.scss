@@ -14,6 +14,10 @@
       line-height: 24px;
       flex-direction: column;
 
+      > .markdown-body {
+        background-color: transparent;
+      }
+
       > .items {
         display: flex;
         align-self: flex-end;

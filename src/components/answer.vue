@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import Head from "components/head.vue"
 import {CopyOutlined, LikeOutlined} from "@ant-design/icons-vue"
+import "github-markdown-css/github-markdown-light.css"
+import Head from "components/head.vue"
 import type {IAnswer} from "types/answer"
 
 defineProps<Omit<IAnswer, 'id'>>()
@@ -11,7 +12,7 @@ defineProps<Omit<IAnswer, 'id'>>()
     <div :class="{content: true, [type]: true}">
       <Head style="margin: 10px 12px 0 0" :style="{opacity: +(type === 'chat')}"/>
       <div class="bubble">
-        <div class="html" v-html="content"/>
+        <div class="markdown-body" v-html="content"/>
         <ul v-if="type === 'chat'" class="items">
           <li class="icon up">
             <LikeOutlined/>
