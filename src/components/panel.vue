@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import {Modal, Button as AButtom} from "ant-design-vue"
 import {nextTick, ref, watch} from "vue"
-const props = defineProps<{state: boolean}>()
+
+const props = defineProps<{ state: boolean }>()
 const emit = defineEmits(["update:state"])
 
 const state = ref(props.state)
@@ -20,7 +21,8 @@ watch(state, newVal => {
 
 <template>
   <div class="panel">
-    <Modal wrapClassName="panel-model" title="管理对话记录" :keyboard="false" :maskClosable="false" v-model:open="state" centered>
+    <Modal wrapClassName="panel-model" title="管理对话记录" :keyboard="false" :maskClosable="false" v-model:open="state"
+           centered>
       <p>some contents...</p>
       <p>some contents...</p>
       <p>some contents...</p>

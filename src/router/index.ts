@@ -1,7 +1,6 @@
 import {createRouter, createWebHistory} from "vue-router";
-import type {RouteRecordRaw} from "vue-router";
 
-const routes: Readonly<RouteRecordRaw[]> = [{
+const routes = [{
     path: "/",
     component: () => import("@/views/home.vue")
 }]

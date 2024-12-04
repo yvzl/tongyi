@@ -6,7 +6,7 @@ import {SendOutlined} from "@ant-design/icons-vue";
 <template>
   <div class="submit">
     <AButton type="primary" size="large" shape="circle">
-      <SendOutlined />
+      <SendOutlined/>
     </AButton>
   </div>
 </template>

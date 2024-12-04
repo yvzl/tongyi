@@ -11,7 +11,7 @@ onMounted(() => emit("refs", search.value))
 <template>
   <div ref="search" class="search">
     <div class="icon">
-      <SearchOutlined />
+      <SearchOutlined/>
     </div>
     <input placeholder="搜索历史记录" type="text">
   </div>

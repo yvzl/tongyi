@@ -7,7 +7,8 @@ const str = ref<string>("111")
 
 <template>
   <div class="input">
-    <Textarea v-model="str" placeholder="遇事不决问通义" :bordered="false" :autoSize="{ minRows: 1, maxRows: 4 }" :maxlength="5000" resize="none"/>
+    <Textarea v-model="str" placeholder="遇事不决问通义" :bordered="false" :autoSize="{ minRows: 1, maxRows: 4 }"
+              :maxlength="5000" resize="none"/>
   </div>
 </template>
 
