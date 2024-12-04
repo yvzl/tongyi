@@ -2,7 +2,7 @@
 import Header from 'components/Header.vue'
 import Dialog from 'components/Dialog.vue'
 import ChatInput from 'components/chatInput.vue'
-import type {IAnswer} from "types/answer"
+import type {IAnswer} from "@/types"
 
 const data: IAnswer[] = [{
   id: 1,

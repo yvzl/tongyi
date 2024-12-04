@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Answer from "components/answer.vue";
-import type {IAnswer} from "types/answer";
+import type {IAnswer} from "@/types"
 
 defineProps<{ data: IAnswer[] }>()
 </script>

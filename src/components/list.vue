@@ -2,7 +2,7 @@
 import {Popover} from "ant-design-vue";
 import {nextTick, ref, watch} from "vue"
 import {DeleteOutlined, EditOutlined, EllipsisOutlined, PaperClipOutlined} from "@ant-design/icons-vue";
-import type {IList} from "types/list"
+import type {IList} from "@/types"
 
 const props = defineProps<{ list: IList[], state: IList["id"] }>()
 const emit = defineEmits(["update:state"])
