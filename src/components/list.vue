@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import {nextTick, ref, watch} from "vue"
-import type {IList} from "types/list"
-import {DeleteOutlined, EditOutlined, EllipsisOutlined, PaperClipOutlined} from "@ant-design/icons-vue";
 import {Popover} from "ant-design-vue";
+import {nextTick, ref, watch} from "vue"
+import {DeleteOutlined, EditOutlined, EllipsisOutlined, PaperClipOutlined} from "@ant-design/icons-vue";
+import type {IList} from "types/list"
 
 const props = defineProps<{ list: IList[], state: IList["id"] }>()
 const emit = defineEmits(["update:state"])

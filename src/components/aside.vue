@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ref} from "vue"
-import ToolBar from 'components/toolbar.vue'
 import List from "components/list.vue";
+import ToolBar from 'components/toolbar.vue'
 import PanelButton from "components/panelButton.vue"
 
 const state = ref<number>(1)

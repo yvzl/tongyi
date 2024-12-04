@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {Textarea} from "ant-design-vue";
 import {ref} from "vue"
+import {Textarea} from "ant-design-vue";
 
 const str = ref<string>("111")
 </script>

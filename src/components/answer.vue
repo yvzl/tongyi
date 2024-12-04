@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {CopyOutlined, LikeOutlined} from "@ant-design/icons-vue"
-import "github-markdown-css/github-markdown-light.css"
 import Head from "components/head.vue"
+import "github-markdown-css/github-markdown-light.css"
 import type {IAnswer} from "types/answer"
 
 defineProps<Omit<IAnswer, 'id'>>()
