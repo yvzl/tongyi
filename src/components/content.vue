@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import {ref} from "vue"
 import Header from 'components/Header.vue'
 import Dialog from 'components/Dialog.vue'
 import ChatInput from 'components/chatInput.vue'
 import type {IAnswer} from "@/types"
+
+const value = ref("")
 
 const data: IAnswer[] = [{
   id: 1,
@@ -59,7 +62,7 @@ const data: IAnswer[] = [{
   <div class="content">
     <Header/>
     <Dialog :data="data"/>
-    <ChatInput style="margin-bottom: 25px"/>
+    <ChatInput :value="value" style="margin-bottom: 25px"/>
   </div>
 </template>
 

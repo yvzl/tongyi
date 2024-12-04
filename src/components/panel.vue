@@ -1,27 +1,18 @@
 <script setup lang="ts">
+import {ref} from "vue"
+import {modelValue} from "@/utils";
 import {Modal, Button as AButtom} from "ant-design-vue"
-import {nextTick, ref, watch} from "vue"
 
 const props = defineProps<{ state: boolean }>()
 const emit = defineEmits(["update:state"])
+const dialogState = ref(props.state)
 
-const state = ref(props.state)
-const watchState = ref(true)
-
-watch(() => props.state, newVal => {
-  watchState.value = false
-  state.value = newVal
-  nextTick(() => watchState.value = true)
-})
-
-watch(state, newVal => {
-  watchState.value && emit("update:state", newVal)
-})
+modelValue(props, "state", dialogState, emit, "update:state")
 </script>
 
 <template>
   <div class="panel">
-    <Modal wrapClassName="panel-model" title="管理对话记录" :keyboard="false" :maskClosable="false" v-model:open="state"
+    <Modal wrapClassName="panel-model" title="管理对话记录" :keyboard="false" :maskClosable="false" v-model:open="dialogState"
            centered>
       <p>some contents...</p>
       <p>some contents...</p>

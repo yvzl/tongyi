@@ -4,7 +4,7 @@ import List from "components/list.vue";
 import ToolBar from 'components/toolbar.vue'
 import PanelButton from "components/panelButton.vue"
 
-const state = ref<number>(1)
+const state = ref(1)
 const list = [{
   id: 1,
   name: '当天',

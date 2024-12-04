@@ -1,13 +1,19 @@
 <script setup lang="ts">
 import {ref} from "vue"
+import {modelValue} from "@/utils";
 import {Textarea} from "ant-design-vue";
 
-const str = ref<string>("111")
+const props = defineProps<{ value: string }>()
+const emit = defineEmits(["update:value"])
+
+const inputValue = ref(props.value)
+modelValue(props, "value", inputValue, emit, "update:value")
 </script>
 
 <template>
   <div class="input">
-    <Textarea v-model="str" placeholder="遇事不决问通义" :bordered="false" :autoSize="{ minRows: 1, maxRows: 4 }"
+    <Textarea placeholder="遇事不决问通义" v-model:value="inputValue" :bordered="false"
+              :autoSize="{ minRows: 1, maxRows: 4 }"
               :maxlength="5000" resize="none"/>
   </div>
 </template>

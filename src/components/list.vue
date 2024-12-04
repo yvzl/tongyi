@@ -1,22 +1,16 @@
 <script setup lang="ts">
 import {Popover} from "ant-design-vue";
-import {nextTick, ref, watch} from "vue"
+import {modelValue} from "@/utils"
+import {ref} from "vue"
 import {DeleteOutlined, EditOutlined, EllipsisOutlined, PaperClipOutlined} from "@ant-design/icons-vue";
 import type {IList} from "@/types"
 
 const props = defineProps<{ list: IList[], state: IList["id"] }>()
 const emit = defineEmits(["update:state"])
 
-const state = ref<IList["id"]>(props.state)
-const changeState = ref<Boolean>(true)
+const selectState = ref(props.state)
 
-watch(() => props.state, newVal => {
-  changeState.value = false
-  state.value = newVal
-  nextTick(() => changeState.value = true)
-})
-
-watch(state, newVal => changeState && emit("update:state", newVal))
+modelValue(props, "state", selectState, emit, "update:state")
 </script>
 
 <template>
@@ -25,7 +19,7 @@ watch(state, newVal => changeState && emit("update:state", newVal))
       <li v-for="{id, name, level} in list" :key="id">
         {{ name }}
         <ul>
-          <li @click="state = id" :class="{active: state === id}" v-for="{id, name} in level" :key="id">
+          <li @click="selectState = id" :class="{active: selectState === id}" v-for="{id, name} in level" :key="id">
             <p>{{ name }}</p>
             <Popover :arrow="false" trigger="click" placement="rightTop" overlayClassName="level-popover">
               <template #content>

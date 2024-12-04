@@ -1,11 +1,7 @@
 <script setup lang="ts">
 import head from 'images/head.png'
 
-withDefaults(defineProps<{
-  imgSrc?: string
-}>(), {
-  imgSrc: head as string
-})
+withDefaults(defineProps<{ imgSrc?: string }>(), {imgSrc: head as string})
 </script>
 
 <template>

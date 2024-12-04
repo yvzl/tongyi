@@ -3,7 +3,7 @@ import {ref} from "vue"
 import {ControlOutlined} from "@ant-design/icons-vue"
 import Panel from "components/panel.vue"
 
-const state = ref<boolean>(false)
+const state = ref(false)
 </script>
 
 <template>

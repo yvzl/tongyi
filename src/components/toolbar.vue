@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import CreateDialog from 'components/CreateDialog.vue'
 import Search from "components/search.vue";
-import {ref, useTemplateRef} from "vue"
+import {ref} from "vue"
 
-const dialog = ref<useTemplateRef>(null)
-const search = ref<useTemplateRef>(null)
-const state = ref<boolean>(false)
+const dialog = ref<HTMLElement>(null)
+const search = ref<HTMLElement>(null)
+const state = ref(false)
 
-const click = _state => {
+const click = (_state: string) => {
   let opacity = "", width = ""
   if (_state === "search" && !state.value) {
     opacity = "0"

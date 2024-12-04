@@ -1,7 +1,9 @@
 import {defineStore} from "pinia";
 
-export default defineStore("dialog", () => {
+const dialogStore = defineStore("dialogStore", () => {
     return {}
 }, {
     persist: true,
 });
+
+export default dialogStore;
