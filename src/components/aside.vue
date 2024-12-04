@@ -1,27 +1,18 @@
 <script setup lang="ts">
-import {ref} from "vue"
+import {storeToRefs} from "pinia";
 import List from "components/list.vue";
 import ToolBar from 'components/toolbar.vue'
 import PanelButton from "components/panelButton.vue"
+import store from "@/stores"
 
-const state = ref(1)
-const list = [{
-  id: 1,
-  name: '当天',
-  level: [{
-    id: 1,
-    name: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
-  }, {
-    id: 2,
-    name: '聚焦'
-  }]
-}]
+const Store = store()
+const {listData, selectState} = storeToRefs(Store)
 </script>
 
 <template>
   <div class="aside">
     <ToolBar style="margin: 24px 0 28px 0"/>
-    <List :list="list" v-model:state="state"/>
+    <List :list="listData" v-model:state="selectState"/>
     <PanelButton/>
   </div>
 </template>

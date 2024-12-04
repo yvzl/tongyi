@@ -1,3 +1,7 @@
-.ant-modal-root {
-  display: none;
+.panel {
+  :deep(.ant-modal-content) {
+    > .ant-modal-body {
+      height: 430px;
+    }
+  }
 }

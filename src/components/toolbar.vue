@@ -24,7 +24,7 @@ const click = (_state: string) => {
   }
 }
 
-window.addEventListener("click", e => !search.value.contains(e.target) && click('window'))
+window.addEventListener("click", e => !search.value.contains(e.target as HTMLElement) && click('window'))
 
 const dialogRefs = value => dialog.value = value
 const searchRefs = value => search.value = value

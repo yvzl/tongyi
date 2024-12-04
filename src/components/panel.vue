@@ -1,25 +1,33 @@
 <script setup lang="ts">
-import {ref} from "vue"
+import {Modal} from "ant-design-vue"
 import {modelValue} from "@/utils";
-import {Modal, Button as AButtom} from "ant-design-vue"
+import {ref, useTemplateRef} from "vue"
+import {storeToRefs} from "pinia";
+import store from "@/stores"
+import DialogHeader from "components/panelHeader.vue";
+import DialogContent from "components/panelContent.vue";
+import DialogFooter from "components/panelFooter.vue";
+
+const Store = store()
+const {tableData} = storeToRefs(Store)
 
 const props = defineProps<{ state: boolean }>()
 const emit = defineEmits(["update:state"])
 const dialogState = ref(props.state)
+const panel = useTemplateRef("panel")
 
 modelValue(props, "state", dialogState, emit, "update:state")
 </script>
 
 <template>
-  <div class="panel">
-    <Modal wrapClassName="panel-model" title="管理对话记录" :keyboard="false" :maskClosable="false" v-model:open="dialogState"
+  <div ref="panel" class="panel">
+    <Modal :closable="false" :width="960" :getContainer="panel" :keyboard="false" :maskClosable="false"
+           v-model:open="dialogState"
            centered>
-      <p>some contents...</p>
-      <p>some contents...</p>
-      <p>some contents...</p>
+      <DialogHeader/>
+      <DialogContent v-model:data="tableData"/>
       <template #footer>
-        <AButtom key="back" @click="">取消</AButtom>
-        <AButtom type="primary" @click="" danger>删除所选</AButtom>
+        <DialogFooter v-model:data="tableData" v-model:close="dialogState"/>
       </template>
     </Modal>
   </div>
