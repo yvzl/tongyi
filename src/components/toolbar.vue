@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import {ref} from "vue"
+import {storeToRefs} from "pinia";
+import {dialogStore} from "@/stores"
 import CreateDialog from 'components/CreateDialog.vue'
 import Search from "components/search.vue";
-import {ref} from "vue"
+
+const {searchValue} = storeToRefs(dialogStore())
 
 const dialog = ref<HTMLElement>(null)
 const search = ref<HTMLElement>(null)
@@ -33,7 +37,7 @@ const searchRefs = value => search.value = value
 <template>
   <div class="toolbar">
     <CreateDialog @refs="dialogRefs"/>
-    <Search @click="click('search')" @refs="searchRefs"/>
+    <Search v-model:value="searchValue" @click="click('search')" @refs="searchRefs"/>
   </div>
 </template>
 

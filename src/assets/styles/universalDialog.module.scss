@@ -1,0 +1,51 @@
+.delete-dialog {
+  :deep(.universal-dialog) {
+    .ant-modal-body {
+      > .header {
+        font-size: 16px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+
+        > span {
+          font-size: 18px;
+        }
+
+        > p {
+          margin-left: 10px;
+        }
+      }
+
+      > .normal {
+        > span {
+          color: #615ced;
+        }
+      }
+
+      > .success {
+        > span {
+          color: #49aa19;
+        }
+      }
+
+      > .warning {
+        > span {
+          color: #d89614;
+        }
+      }
+
+      > .danger {
+        > span {
+          color: #e63224;
+        }
+      }
+
+      > .content {
+        padding-left: 30px;
+      }
+    }
+    .ant-modal-footer {
+      margin-top: 20px;
+    }
+  }
+}

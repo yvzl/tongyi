@@ -6,7 +6,7 @@ export const modelValue = <T>(props: DefineProps<any, any>, propsName: string, r
     watch((): T => props[propsName], newVal => {
         state.value = false
         refValue.value = newVal
-        nextTick(() => state.value = true)
+        nextTick(() => state.value = true).then()
     }, {deep: true})
     watch(refValue, newVal => state.value && emit(emitName, newVal), {deep: true})
 }

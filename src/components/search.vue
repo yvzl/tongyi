@@ -1,11 +1,16 @@
 <script setup lang="ts">
+import {modelValue} from "@/utils";
 import {SearchOutlined} from '@ant-design/icons-vue'
-import {onMounted, useTemplateRef} from "vue";
+import {onMounted, useTemplateRef, ref} from "vue";
 
-const emit = defineEmits(["refs"])
+const props = defineProps<{ value: string }>()
+const emit = defineEmits(["refs", "update:value"]);
+
 const search = useTemplateRef("search")
+const value = ref(props.value)
 
 onMounted(() => emit("refs", search.value))
+modelValue(props, "value", value, emit, "update:value")
 </script>
 
 <template>
@@ -13,7 +18,7 @@ onMounted(() => emit("refs", search.value))
     <div class="icon">
       <SearchOutlined/>
     </div>
-    <input placeholder="搜索历史记录" type="text">
+    <input v-model="value" placeholder="搜索历史记录" type="text">
   </div>
 </template>
 

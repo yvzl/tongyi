@@ -8,7 +8,7 @@ defineProps<{ data: IAnswer[] }>()
 <template>
   <div class="dialog">
     <ul>
-      <li v-for="{id, type, content} in data" :key="id">
+      <li v-for="{key, type, content} in data" :key="key">
         <Answer :type="type" :content="content"/>
       </li>
     </ul>

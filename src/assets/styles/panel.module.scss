@@ -1,7 +1,11 @@
 .panel {
-  :deep(.ant-modal-content) {
-    > .ant-modal-body {
-      height: 430px;
+  :deep(.panel-modal) {
+    > div {
+      > .ant-modal-content {
+        > .ant-modal-body {
+          height: 430px;
+        }
+      }
     }
   }
 }

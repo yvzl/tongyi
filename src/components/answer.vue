@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import {message} from 'ant-design-vue';
+import {debounce} from "@/utils";
 import {CopyOutlined, LikeOutlined} from "@ant-design/icons-vue"
 import Head from "components/head.vue"
 import "github-markdown-css/github-markdown-light.css"
 import type {IAnswer} from "@/types"
-import {debounce} from "@/utils";
 
-defineProps<Omit<IAnswer, 'id'>>()
+defineProps<Omit<IAnswer, 'key'>>()
 
 const copy = debounce(() => message.success("复制成功"), 300)
 const unLike = debounce(() => message.error("谁让你点了"), 300)

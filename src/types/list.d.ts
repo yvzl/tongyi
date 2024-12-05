@@ -1,10 +1,12 @@
 interface ILevel {
-    id: number;
+    key: number;
     name: string;
+    top: boolean;
+    edit: boolean;
 }
 
 interface IList {
-    id: number;
+    key: number;
     name: string;
     level: ILevel[];
 }

@@ -3,13 +3,13 @@ import {Modal} from "ant-design-vue"
 import {modelValue} from "@/utils";
 import {ref, useTemplateRef} from "vue"
 import {storeToRefs} from "pinia";
-import store from "@/stores"
+import {dialogStore} from "@/stores"
 import DialogHeader from "components/panelHeader.vue";
 import DialogContent from "components/panelContent.vue";
 import DialogFooter from "components/panelFooter.vue";
 
-const Store = store()
-const {tableData} = storeToRefs(Store)
+const store = dialogStore()
+const {dialogData, searchValue} = storeToRefs(store)
 
 const props = defineProps<{ state: boolean }>()
 const emit = defineEmits(["update:state"])
@@ -21,13 +21,13 @@ modelValue(props, "state", dialogState, emit, "update:state")
 
 <template>
   <div ref="panel" class="panel">
-    <Modal :closable="false" :width="960" :getContainer="panel" :keyboard="false" :maskClosable="false"
+    <Modal :closable="false" class="panel-modal" :width="960" :getContainer="panel" :keyboard="false" :maskClosable="false"
            v-model:open="dialogState"
            centered>
       <DialogHeader/>
-      <DialogContent v-model:data="tableData"/>
+      <DialogContent v-model:data="dialogData"/>
       <template #footer>
-        <DialogFooter v-model:data="tableData" v-model:close="dialogState"/>
+        <DialogFooter v-model:close="dialogState"/>
       </template>
     </Modal>
   </div>

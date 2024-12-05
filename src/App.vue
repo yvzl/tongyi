@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ConfigProvider} from "ant-design-vue"
-import theme from "config/theme"
+import {theme} from "@/config"
 </script>
 
 <template>

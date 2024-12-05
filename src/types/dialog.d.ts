@@ -1,13 +1,17 @@
 interface IAnswer {
-    id: number;
+    key: number;
     type: "chat" | "user";
     content: string;
 }
 
 interface IDialog {
-    id: number;
+    key: number;
+    name: string;
     time: string;
+    select: boolean;
     data: IAnswer[];
+    top: boolean;
+    edit: boolean;
 }
 
 export {
