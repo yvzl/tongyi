@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import {Modal} from "ant-design-vue"
-import {modelValue} from "@/utils";
-import {ref, useTemplateRef} from "vue"
 import {storeToRefs} from "pinia";
-import {dialogStore} from "@/stores"
+import {modelValue} from "@/utils";
+import {dialogStore} from "@/stores";
+import {Modal} from "ant-design-vue";
+import {ref, useTemplateRef} from "vue"
 import DialogHeader from "components/panelHeader.vue";
 import DialogContent from "components/panelContent.vue";
 import DialogFooter from "components/panelFooter.vue";
 
 const store = dialogStore()
-const {dialogData, searchValue} = storeToRefs(store)
+const {dialogData} = storeToRefs(store)
 
 const props = defineProps<{ state: boolean }>()
 const emit = defineEmits(["update:state"])
@@ -21,7 +21,8 @@ modelValue(props, "state", dialogState, emit, "update:state")
 
 <template>
   <div ref="panel" class="panel">
-    <Modal :closable="false" class="panel-modal" :width="960" :getContainer="panel" :keyboard="false" :maskClosable="false"
+    <Modal :closable="false" class="panel-modal" :width="960" :getContainer="panel" :keyboard="false"
+           :maskClosable="false"
            v-model:open="dialogState"
            centered>
       <DialogHeader/>

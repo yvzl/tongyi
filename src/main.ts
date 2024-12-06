@@ -1,9 +1,9 @@
-import {createApp} from 'vue'
+import {createApp} from 'vue';
 import {createPinia} from 'pinia';
+import App from '@/App.vue';
+import router from '@/router';
 import createPersistedState from 'pinia-plugin-persistedstate';
-import router from '@/router'
-import App from '@/App.vue'
-import "styles/index.scss"
+import "styles/index.scss";
 
 const app = createApp(App)
 const pinia = createPinia()

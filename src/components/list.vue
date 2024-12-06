@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import {storeToRefs} from "pinia";
 import {dialogStore} from "@/stores"
+import {nextTick, useTemplateRef} from "vue";
 import {Popover, Input, message} from "ant-design-vue";
 import {DeleteOutlined, EditOutlined, EllipsisOutlined, PaperClipOutlined} from "@ant-design/icons-vue";
 import type {IList, IDialog} from "@/types"
-import {nextTick, useTemplateRef} from "vue";
 
 const store = dialogStore()
 const {editDialog, deleteDialog, updateSelectState, findIndex} = store

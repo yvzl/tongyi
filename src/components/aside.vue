@@ -9,7 +9,7 @@ import PanelButton from "components/panelButton.vue"
 import type {IList, IDialog} from "@/types";
 
 const store = dialogStore()
-const {dialogData, searchValue} = storeToRefs(store)
+const {dialogData} = storeToRefs(store)
 
 const initListData = (): IList[] => {
   const dateMap = new Map([

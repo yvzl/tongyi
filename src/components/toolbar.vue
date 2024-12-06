@@ -2,8 +2,8 @@
 import {ref} from "vue"
 import {storeToRefs} from "pinia";
 import {dialogStore} from "@/stores"
-import CreateDialog from 'components/CreateDialog.vue'
 import Search from "components/search.vue";
+import CreateDialog from 'components/CreateDialog.vue'
 
 const {searchValue} = storeToRefs(dialogStore())
 

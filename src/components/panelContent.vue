@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import {ref} from "vue"
 import {dialogStore} from "@/stores";
-import {modelValue, getContent, includesName} from "@/utils";
 import {DeleteOutlined} from "@ant-design/icons-vue"
 import {Checkbox, Table as ATable} from "ant-design-vue"
+import {modelValue, getContent, includesName} from "@/utils";
+import {storeToRefs} from "pinia";
 import type {IDialog} from "@/types"
 import type {ColumnsType} from "ant-design-vue/es/table";
-import {storeToRefs} from "pinia";
 
 const {tableValue} = storeToRefs(dialogStore())
 const props = defineProps<{ data: IDialog[] }>()
