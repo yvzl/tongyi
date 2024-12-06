@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import {message} from 'ant-design-vue';
+import {md} from "@/utils"
 import {debounce} from "@/utils";
+import {message} from 'ant-design-vue';
 import {CopyOutlined, LikeOutlined} from "@ant-design/icons-vue"
 import Head from "components/head.vue"
-import "github-markdown-css/github-markdown-light.css"
+import "highlight.js/styles/default.min.css"
 import type {IAnswer} from "@/types"
 
 defineProps<Omit<IAnswer, 'key'>>()
@@ -18,7 +19,7 @@ const like = debounce(() => message.success("感谢您的支持"), 300)
     <div :class="{content: true, [type]: true}">
       <Head style="margin: 10px 12px 0 0" :style="{opacity: +(type === 'chat')}"/>
       <div class="bubble">
-        <div class="markdown-body" v-html="content"/>
+        <div class="markdown-body" v-html="md.render(content)"/>
         <ul v-if="type === 'chat'" class="items">
           <li @click="like" class="icon up">
             <LikeOutlined/>
